@@ -4,7 +4,8 @@ class Connexion extends React.Component {
     goToChat = event => {
         event.preventDefault();
         console.log('ok');
-        console.log(this.loginInput.value);
+        const login = this.loginInput.value;
+        this.context.router.transitionTo(`/login/${login}`);
     };
     render () {
         return(
@@ -12,7 +13,7 @@ class Connexion extends React.Component {
                 <form className="connexion" onSubmit={(e) => this.goToChat(e)}>
                     <input type="text" placeholder="Login"
                            required
-                           ref= {input => {
+                           ref={input => {
                                this.loginInput = input
                            }
                     }/>
@@ -20,6 +21,9 @@ class Connexion extends React.Component {
                 </form>
             </div>
         )
+    }
+    static contextTypes = {
+        router: React.PropTypes.object
     }
 }
 
