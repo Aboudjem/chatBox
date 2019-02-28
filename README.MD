@@ -1,6 +1,6 @@
 # chatBox
 
-chatBox is a chat client using React and Firebase ![Firebase's logo|30x30](https://github.com/Aboudjem/WalletGenerator/blob/master/public/img/firebase.png) to create a real-time chat messenger for more effective and collaborative work among teams.
+chatBox is a chat client using React and Firebase ![Firebase's logo|30x30](https://github.com/Aboudjem/chatBox/blob/master/public/img/firebase.png) to create a real-time chat messenger for more effective and collaborative work among teams.
 
 
 ## Installation
