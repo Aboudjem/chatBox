@@ -50,8 +50,11 @@ body {
 	max-width: 500px;
 	height: calc(100vh - 100px);
 	padding: 50px 0;
-	background-color: #1f3c88;
-	border: 1px solid #5893d4;
+	background: #070d59; /* Old browsers */
+	background: -moz-linear-gradient(left, #070d59 0%, #070d59 5%, #1f3c88 50%, #070d59 95%, #070d59 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, #070d59 0%,#070d59 5%,#1f3c88 50%,#070d59 95%,#070d59 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, #070d59 0%,#070d59 5%,#1f3c88 50%,#070d59 95%,#070d59 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#070d59', endColorstr='#070d59',GradientType=1 ); /* IE6-9 */
 }
 
 .box > * {
@@ -134,7 +137,7 @@ body {
 }
 
 /* ----------------------------
-	FORMULAIRE
+	FORM
 ---------------------------- */
 
 .form {
@@ -165,13 +168,14 @@ textarea {
 button {
 	font-size: 20px;
 	border: none;
-	color: Black;
+	color: #ffffff;
 	background-color: #f7b633;
 	margin-top: 10px;
 	padding: 10px;
 	cursor: pointer;
 	border-radius: 2px;
 	font-weight: bolder;
+	text-shadow: #000 1px 0 4px;
 }
 
 button:disabled {
@@ -203,5 +207,5 @@ button:active {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-top: 15vh;
+	padding-top: 10vh;
 }
