@@ -1,6 +1,6 @@
 import React from "react";
 
-class Formulaire extends React.Component {
+class Form extends React.Component {
     state = {
         length: this.props.length
     };
@@ -15,11 +15,10 @@ class Formulaire extends React.Component {
         this.messageForm.reset();
         const length = this.props.length;
         this.setState({length});
-};
-    count = event => {
+    };
+    count = () => {
         const length = this.props.length - this.message.value.length;
-        console.log(length);
-        this.setState({ length });
+        this.setState({length});
     };
 
     handleKeyPress = event => {
@@ -29,13 +28,13 @@ class Formulaire extends React.Component {
     };
 
 
-    render (){
-        return(
-                <form
-                    className="form"
-                    onSubmit={e => this.createMessage(e)}
-                    ref={input => this.messageForm = input}
-                >
+    render() {
+        return (
+            <form
+                className="form"
+                onSubmit={e => this.createMessage(e)}
+                ref={input => this.messageForm = input}
+            >
                     <textarea
                         required
                         maxLength="140"
@@ -43,13 +42,17 @@ class Formulaire extends React.Component {
                         onChange={e => this.count(e)}
                         onKeyPress={this.handleKeyPress}
                     />
-                        <div className="info">{this.state.length}</div>
-                        <button type="submit" >Submit</button>
-                </form>
+                <div className="info">{this.state.length}</div>
+                <button type="submit">Submit</button>
+            </form>
         )
+    }
+
+    static propTypes = {
+        addMessage: React.PropTypes.func.isRequired,
+        login: React.PropTypes.string.isRequired,
+        length: React.PropTypes.number.isRequired,
     }
 }
 
-
-
-export default Formulaire;
+export default Form;

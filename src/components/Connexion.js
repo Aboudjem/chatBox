@@ -17,29 +17,30 @@ class Connexion extends React.Component {
         }
     };
 
-    render () {
-        return(
-
+    render() {
+        return (
             <div className="logo">
                 <Logo/>
                 <div className="connexionBox">
-                <form className="connexion" onSubmit={(e) => this.goToChat(e)}>
-                    <input type="text" placeholder="Login"
-                           required
-                           ref={input => {
-                               this.loginInput = input
-                           }}
-                           onKeyPress={this.handleKeyPress}
-                    />
-                    <button type="submit">Connect</button>
-                </form>
-            </div>
+                    <form className="connexion" onSubmit={(e) => this.goToChat(e)}>
+                        <input type="text" placeholder="Login"
+                               required
+                               ref={input => {
+                                   this.loginInput = input
+                               }}
+                               onKeyPress={this.handleKeyPress}
+                        />
+                        <button type="submit">Connect</button>
+                    </form>
+                </div>
             </div>
         )
     }
+
     static contextTypes = {
         router: React.PropTypes.object
     }
+
 }
 
 export default Connexion;

@@ -1,5 +1,5 @@
 import React from "react";
-import Formulaire from './Formulaire';
+import Form from './Form';
 import Message from './Message';
 import base from '../Base';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
@@ -10,14 +10,14 @@ class App extends React.Component {
         messages: {}
     };
 
-    componentWillMount(){
+    componentWillMount() {
         this.ref = base.syncState('/', {
             context: this,
             state: 'messages'
         });
     }
 
-    componentDidUpdate(){
+    componentDidUpdate() {
         this.messages.scrollTop = this.messages.scrollHeight;
     }
 
@@ -30,32 +30,36 @@ class App extends React.Component {
     };
 
     isUser = (login) => {
-      return login === this.props.params.login;
+        return login === this.props.params.login;
     };
 
-    render () {
+    render() {
         const messages = Object
             .keys(this.state.messages)
-            .map(key => <Message key={key} isUser={this.isUser} details={this.state.messages[key]} /> )
+            .map(key => <Message key={key} isUser={this.isUser} details={this.state.messages[key]}/>)
         ;
-        return(
+        return (
             <div className="box">
                 <div>
                     <div className="messages" ref={input => this.message = input}>
                         <ReactCSSTransitionGroup
-                        component="div"
-                        className="message"
-                        transitionName="message"
-                        transitionEnterTimeout={500}
-                        transitionLeaveTimeout={500}>
+                            component="div"
+                            className="message"
+                            transitionName="message"
+                            transitionEnterTimeout={500}
+                            transitionLeaveTimeout={500}>
                             {messages}
                         </ReactCSSTransitionGroup>
                     </div>
-                    <Formulaire addMessage={this.addMessage} login={this.props.params.login} length="140" />
+                    <Form addMessage={this.addMessage} login={this.props.params.login} length={140}/>
                 </div>
             </div>
         )
     }
+
+    static propTypes = {
+        params: React.PropTypes.object.isRequired
+    };
 }
 
 export default App;
