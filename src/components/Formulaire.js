@@ -22,7 +22,14 @@ class Formulaire extends React.Component {
         this.setState({ length });
     };
 
-    render () {
+    handleKeyPress = event => {
+        if (event.key === 'Enter') {
+            this.createMessage(event);
+        }
+    };
+
+
+    render (){
         return(
                 <form
                     className="form"
@@ -34,9 +41,10 @@ class Formulaire extends React.Component {
                         maxLength="140"
                         ref={input => this.message = input}
                         onChange={e => this.count(e)}
+                        onKeyPress={this.handleKeyPress}
                     />
                         <div className="info">{this.state.length}</div>
-                        <button type="submit">Submit</button>
+                        <button type="submit" >Submit</button>
                 </form>
         )
     }

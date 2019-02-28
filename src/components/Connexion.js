@@ -7,6 +7,13 @@ class Connexion extends React.Component {
         const login = this.loginInput.value;
         this.context.router.transitionTo(`/login/${login}`);
     };
+
+    handleKeyPress = event => {
+        if (event.key === 'Enter') {
+            this.goTochat(event);
+        }
+    };
+
     render () {
         return(
             <div className="connexionBox">
@@ -15,8 +22,9 @@ class Connexion extends React.Component {
                            required
                            ref={input => {
                                this.loginInput = input
-                           }
-                    }/>
+                           }}
+                           onKeyPress={this.handleKeyPress}
+                    />
                     <button type="submit">Send</button>
                 </form>
             </div>
