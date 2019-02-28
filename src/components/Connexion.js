@@ -1,11 +1,14 @@
 import React from "react";
-import Logo from "../../public/img/logo.png"
+import Logo from './Logo'
+
 class Connexion extends React.Component {
+
     goToChat = event => {
         event.preventDefault();
         console.log('ok');
         const login = this.loginInput.value;
         this.context.router.transitionTo(`/login/${login}`);
+
     };
 
     handleKeyPress = event => {
@@ -17,9 +20,9 @@ class Connexion extends React.Component {
     render () {
         return(
 
-
-            <div className="connexionBox">
-                <img src={Logo} alt="logo" className="logo"/>
+            <div className="logo">
+                <Logo/>
+                <div className="connexionBox">
                 <form className="connexion" onSubmit={(e) => this.goToChat(e)}>
                     <input type="text" placeholder="Login"
                            required
@@ -30,7 +33,9 @@ class Connexion extends React.Component {
                     />
                     <button type="submit">Connect</button>
                 </form>
-            </div>        )
+            </div>
+            </div>
+        )
     }
     static contextTypes = {
         router: React.PropTypes.object

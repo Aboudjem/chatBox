@@ -16,7 +16,7 @@ const Root = () => {
             </div>
         </BrowserRouter>
     )
-}
+};
 
 render (
     <Root />,

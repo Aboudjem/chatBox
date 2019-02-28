@@ -24,7 +24,6 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 100vh;
 }
 .connexion {
 	max-width: 500px;
@@ -69,7 +68,7 @@ body {
 	align-self: flex-end;
 	max-height: calc(100vh - 310px);
 	overflow-y: scroll;
-	-webkit-overflow-scrolling:touch;
+	-webkit-overflow-scrolling: touch;
 }
 
 .messages::-webkit-scrollbar {
@@ -200,6 +199,9 @@ button:active {
 }
 
 .logo {
-	display:flex;
+	flex-direction: column;
+	display: flex;
 	justify-content: center;
+	align-items: center;
+	padding-top: 15vh;
 }
