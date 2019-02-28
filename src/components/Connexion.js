@@ -1,5 +1,5 @@
 import React from "react";
-
+import Logo from "../../public/img/logo.png"
 class Connexion extends React.Component {
     goToChat = event => {
         event.preventDefault();
@@ -16,7 +16,10 @@ class Connexion extends React.Component {
 
     render () {
         return(
+
+
             <div className="connexionBox">
+                <img src={Logo} alt="logo" className="logo"/>
                 <form className="connexion" onSubmit={(e) => this.goToChat(e)}>
                     <input type="text" placeholder="Login"
                            required
@@ -25,10 +28,9 @@ class Connexion extends React.Component {
                            }}
                            onKeyPress={this.handleKeyPress}
                     />
-                    <button type="submit">Send</button>
+                    <button type="submit">Connect</button>
                 </form>
-            </div>
-        )
+            </div>        )
     }
     static contextTypes = {
         router: React.PropTypes.object
