@@ -2,6 +2,7 @@ import React from "react";
 import Formulaire from './Formulaire';
 import Message from './Message';
 import base from '../Base';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class App extends React.Component {
     state = {
@@ -19,6 +20,7 @@ class App extends React.Component {
         const messages = {...this.state.messages};
         const timestamp = Date.now();
         messages[`message-${timestamp}`] = message;
+        Object.keys(messages).slice(0, -10).map(key => messages[key] = null);
         this.setState({messages});
     };
 
