@@ -1,6 +1,6 @@
 # chatBox
 
-chatBox is a chat client using React and Firebase ![Firebase's logo|30x30](https://github.com/Aboudjem/chatBox/blob/master/public/img/firebase.png) to create a real-time chat messenger for more effective and collaborative work among teams.
+chatBox is a chat client using React <img src="https://github.com/Aboudjem/chatBox/blob/master/public/img/react.png" width="20" /> and Firebase <img src="https://github.com/Aboudjem/chatBox/blob/master/public/img/firebase.png" width="20" /> to create a real-time chat messenger for more effective and collaborative work among teams.
 
 
 ## Installation
@@ -26,12 +26,11 @@ npm install
 
 ## Example
 
-#### Generate BTC Address from a choosen Private Key
-![Image of Wallet Generator|250x250](https://github.com/Aboudjem/WalletGenerator/blob/master/public/img/BitcoinGenerator1.png)
-#### Combine shared parts of Private Key
-![Image of Wallet Generator|250x250](https://github.com/Aboudjem/WalletGenerator/blob/master/public/img/BitcoinGenerator2.png)
-#### Create a Shared Private Key
-![Image of Wallet Generator|250x250](https://github.com/Aboudjem/WalletGenerator/blob/master/public/img/BitcoinGenerator4.png)
+#### Login
+![Image of Login|250x250](https://github.com/Aboudjem/chatBox/blob/master/public/img/login.png)
+#### ChatBox
+![Image of Chat|250x250](https://github.com/Aboudjem/chatBox/blob/master/public/img/chat.png)
+
 
 
 ## Contributing
